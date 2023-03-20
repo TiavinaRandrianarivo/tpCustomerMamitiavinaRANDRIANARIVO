@@ -38,6 +38,6 @@ public class CustomerManager {
     }   
     
     public Customer findById(int idCustomer) {  
-  return em.find(Customer.class, idCustomer);  
-}
+        return em.find(Customer.class, idCustomer);  
+    }
 }
