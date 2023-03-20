@@ -44,7 +44,12 @@
                                    itemLabel="#{discount.code} : #{discount.rate}" 
                                    itemValue="#{discount}"/>
                 </h:selectOneMenu>
+                <h:button id="back" value="Revenir à la liste" outcome="customerList"/>
+                <h:commandButton id="update" value="Enregistrer" action="#{customerDetailsBean.update}"/>
             </h:panelGrid>
         </h:form>
+        <!--Message disant "Aucun client n'a été trouvé avec cet id" dans le cas où le formulaire n'est pas affiché--> 
+        <h:outputText value="Aucun client avec l'id #{customerDetailsBean.idCustomer} !" rendered='#{customerDetailsBean.customer == null}'/>
+        <!--requête GET : Revenir à la liste des clients-->
     </h:body>
 </html>
